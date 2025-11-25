@@ -18,7 +18,7 @@ export function isSearchCacheValid(keyword) {
     const now = Date.now();
     const cacheAgeMinutes = (now - cached.timestamp) / (1000 * 60);
 
-    if (cacheAgeMinutes > globals.searchCacheMinutes) {
+    if (cacheAgeMinutes > 99999) {
         // 缓存已过期，删除它
         globals.searchCache.delete(keyword);
         log("info", `Search cache for "${keyword}" expired after ${cacheAgeMinutes.toFixed(2)} minutes`);
