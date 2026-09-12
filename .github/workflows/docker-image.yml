@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+    if: github.repository == 'huangxd-/danmu_api'   # 加上这行
   pull_request:
     branches:
       - main
